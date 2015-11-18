@@ -1,3 +1,5 @@
+require 'pry'
+
 class MergeSort
 
   attr_reader :new_array_a, :new_array_b
@@ -13,8 +15,7 @@ class MergeSort
       @new_array_a = sort(array_a)
       @new_array_b = sort(array_b)
 
-      sorted_elements = merge(@new_array_a, @new_array_b)
-      return sorted_elements
+      merge(sort(array_a), sort(array_b))
     end
   end
 
@@ -42,3 +43,15 @@ class MergeSort
 end
 
 MergeSort.new.sort(["z", "x", "d", "a", "c", "b", "f"])
+
+# def merge(left right)
+#   new_elements = []
+#   until left.empty? || right.empty?
+#     if left.first <= right.first
+#       new_elements << left.shift
+#     else
+#       new_elements << right.shift
+#     end
+#   end
+#   new_elements + left + right
+# end

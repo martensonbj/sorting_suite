@@ -1,7 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/merge_sort'
+require_relative '../lib/merge_sort_2'
 
 class MergeTest < Minitest::Test
 
@@ -11,17 +11,24 @@ class MergeTest < Minitest::Test
   end
 
   def test_array_has_more_than_two_numbers
+    skip
     sorter = MergeSort.new
+    binding.pry
+
+    sorter.sort(["a", "b"])
     assert @elements.length > 2
   end
 
   def test_it_sorts
     sorter = MergeSort.new
-    assert_equal ["a", "b", "c", "d"], sorter.sort(["d", "b", "a", "c"])
+    ary = ["d", "b", "a", "c"]
+
+    assert_equal ["a", "b", "c", "d"], sorter.sort(ary)
   end
 
   def test_it_sorts_small_arrays
     sorter = MergeSort.new
+    binding.pry
     assert_equal [1, 3, 4], sorter.sort([4, 3, 1])
   end
 

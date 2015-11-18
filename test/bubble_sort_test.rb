@@ -40,5 +40,4 @@ class BubbleTest < Minitest::Test
     assert_equal [2, 7, 15, 45, 50000], sorter.sort([7, 50000, 45, 15, 2])
   end
 
-
 end
